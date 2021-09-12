@@ -1,0 +1,35 @@
+Device test automation. To test any device we have to execute the commands.
+The device may be in local, or it may be in remote.
+If the device in local, then we have to follow the below approach to automate the command execution.
+ 
+import os
+os.system(" any command which you want to execute")
+
+This approach will not show an out for any command. for example.
+
+os.system("ls -ltr") will show the output, but if we want analyze this output, we could not store that in any variable.
+ that's why we need to use subprocess module.
+
+import subprocess
+res = subprocess.check_output("ls -ltr")
+
+The command output available now in res variable.
+
+If the device in remote, then we have to use paramiko module if the device has linux os. we have to use telnetlib to 
+connect to the windows os devices.
+telnet lib: https://www.tutorialspoint.com/python_network_programming/python_telnet.htm
+paramiko: https://github.com/sambapython/python/blob/master/pmk.py
+
+before connecting to the remote device by one of these two modules, make sure that the corresponding services(telnet/ssh) running in remote machines.
+
+Now a days every device comeup with a API. application programing interface.
+
+The devices which providing APIs, they will provide a API documentation.
+
+For example look at this site https://reqres.in/
+ url = https://reqres.in/api/users?page=2
+
+
+
+
+
